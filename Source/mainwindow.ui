@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1120</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Segoe UI</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Airline Reservation System</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/imagesMain/airplane.png</normaloff>:/imagesMain/airplane.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#centralwidget{
+
+border-image:url(:/imagesMain/background1.jpg);
+
+}
+
+
+
+
+QPushButton {
+
+color:rgb(255, 255, 255);
+
+}
+
+QComboBox {
+    border: 1px solid gray;
+    border-radius: 3px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;
+}
+
+QComboBox:editable {
+    background: white;
+}
+
+QComboBox:!editable, QComboBox::drop-down:editable {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+}
+
+/* QComboBox gets the &quot;on&quot; state when the popup is open */
+QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #D3D3D3, stop: 0.4 #D8D8D8,
+                                stop: 0.5 #DDDDDD, stop: 1.0 #E1E1E1);
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+
+    border-left-width: 1px;
+    border-left-color: darkgray;
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+/*QComboBox::down-arrow {
+    image: url(:/images/SVG/chevron-down.svg);
+}*/
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+    top: 1px;
+    left: 1px;
+}
+
+QComboBox QAbstractItemView {
+    border: 2px solid darkgray;
+    selection-background-color: lightgray;
+}
+
+QHeaderView::section {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 #616161, stop: 0.5 #505050,
+                                      stop: 0.6 #434343, stop:1 #656565);
+    color: white;
+    padding-left: 4px;
+    border: 1px solid #6c6c6c;
+}
+
+QHeaderView::section:checked
+{
+    background-color: rgb(0, 132, 255);
+}
+
+/* style the sort indicator */
+/*QHeaderView::down-arrow {
+    image: url(down_arrow.png);
+}
+
+QHeaderView::up-arrow {
+    image: url(up_arrow.png);
+}*/
+
+QLineEdit {
+    border: 1px solid gray;
+    border-radius: 4px;
+    padding: 0 8px;
+    background: rgb(234, 234, 234);
+    selection-background-color: darkgray;
+}
+
+QLineEdit[echoMode=&quot;2&quot;] {
+    lineedit-password-character: 42;
+}
+
+
+
+
+
+
+
+QMenuBar {
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                      stop:0 rgb(84, 209, 255), stop:1 rgb(0, 170, 255));
+    spacing: 3px; /* spacing between menu bar items */
+}
+
+QMenuBar::item {
+    padding: 1px 4px;
+    background: transparent;
+    border-radius: 3px;
+}
+
+QMenuBar::item:selected { /* when selected using mouse or keyboard */
+    background: rgb(2, 242, 255);
+}
+
+QMenuBar::item:pressed {
+    background: rgb(255, 255, 255);
+}
+
+QPushButton {
+    border: 2px solid #8f8f91;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #f6f7fa, stop: 1 #dadbde);
+    min-width: 80px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+QCalendarWidget
+{
+	background-color: grey; 
+	selection-background-color: rgb(64, 64, 64); 
+	selection-color: rgb(0, 255, 0); 
+}
+
+QPushButton:default {
+    border-color: navy; /* make the default button prominent */
+}
+
+QPushButton{
+
+color:rgb(0, 0, 0)
+}
+
+QInputDialog{
+
+color:rgb(0, 0, 0);
+
+}
+
+QMenu {
+    background-color: rgb(160, 242, 255); /* sets background of the menu */
+    border: 1px solid black;
+}
+
+QMenu::item {
+    /* sets background of menu item. set this to something non-transparent
+        if you want menu color and menu item color to be different */
+    background-color: transparent;
+}
+
+QMenu::item:selected { /* when user selects item using mouse or keyboard */
+    background-color: rgb(28, 176, 255);
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="BookingStack">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>481</width>
+      <height>591</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#BookingStack{
+
+background:rgba(36, 36, 36,150);
+border-radius:8px;
+
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>10</y>
+        <width>211</width>
+        <height>69</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Pastelle DEMO</family>
+        <pointsize>37</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">#label_4 {
+
+color:rgb(255, 255, 255);
+
+}</string>
+      </property>
+      <property name="text">
+       <string>Flight Booking</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="bookBtn">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>530</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Pastelle DEMO</family>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Search Flight</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>90</y>
+        <width>421</width>
+        <height>411</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="font">
+            <font>
+             <family>OCR A Extended</family>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#label {
+
+color:rgb(255, 255, 255);
+
+}</string>
+           </property>
+           <property name="text">
+            <string>From:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="departureCBox">
+           <property name="font">
+            <font>
+             <family>Nirmala UI</family>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="insertPolicy">
+            <enum>QComboBox::InsertAlphabetically</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="font">
+            <font>
+             <family>OCR A Extended</family>
+             <pointsize>16</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#label_2 {
+
+color:rgb(255, 255, 255);
+
+}</string>
+           </property>
+           <property name="text">
+            <string>To:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="departureCBox_2">
+           <property name="font">
+            <font>
+             <family>Nirmala UI</family>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="insertPolicy">
+            <enum>QComboBox::InsertAlphabetically</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout">
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>OCR A Extended</family>
+             <pointsize>14</pointsize>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#label_3 {
+
+color:rgb(255, 255, 255);
+
+}</string>
+           </property>
+           <property name="text">
+            <string>Select Date</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCalendarWidget" name="calendarWidget">
+           <property name="styleSheet">
+            <string notr="true">#calendarWidget {
+
+background:rgb(42, 42, 42);
+
+}</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QPushButton" name="fbookingBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>460</y>
+        <width>84</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Flight booking</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>580</y>
+      <width>432</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#widget{
+
+border-image:url(:/imagesMain/airlinelogo.png);
+
+}</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1120</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <widget class="QMenu" name="menuServer_Connection">
+     <property name="title">
+      <string>Server Connection</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/images/SVG/stack.svg</normaloff>:/images/SVG/stack.svg</iconset>
+     </property>
+     <addaction name="actionStatus"/>
+     <addaction name="actionSettings"/>
+    </widget>
+    <addaction name="separator"/>
+    <addaction name="actionAdmin_Login"/>
+    <addaction name="separator"/>
+    <addaction name="actionAPI_Setting"/>
+    <addaction name="menuServer_Connection"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <addaction name="actionAbout"/>
+    <addaction name="actionVersion"/>
+   </widget>
+   <addaction name="menuOptions"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <action name="actionAdmin_Login">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/device-desktop.svg</normaloff>:/images/SVG/device-desktop.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Admin Login</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/question.svg</normaloff>:/images/SVG/question.svg</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="actionVersion">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/information.svg</normaloff>:/images/SVG/information.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Version</string>
+   </property>
+  </action>
+  <action name="actionStatus">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/flag.svg</normaloff>:/images/SVG/flag.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Status</string>
+   </property>
+  </action>
+  <action name="actionSettings">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/gear.svg</normaloff>:/images/SVG/gear.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionAPI_Setting">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/cloud.svg</normaloff>:/images/SVG/cloud.svg</iconset>
+   </property>
+   <property name="text">
+    <string>API Setting</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

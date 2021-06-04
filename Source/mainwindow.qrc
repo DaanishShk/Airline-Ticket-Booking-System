@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/imagesMain">
+        <file>background.jpg</file>
+        <file>plane.jpg</file>
+        <file>plane1.png</file>
+        <file>background1.jpg</file>
+        <file>plane.png</file>
+        <file>flightImage.jpg</file>
+        <file>server.png</file>
+        <file>airlinelogo.png</file>
+        <file>airline.png</file>
+        <file>airplane.png</file>
+    </qresource>
+</RCC>

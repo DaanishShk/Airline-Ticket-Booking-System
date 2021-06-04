@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>adminportal</class>
+ <widget class="QMainWindow" name="adminportal">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Admin Portal</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/images/SVG/monitor.svg</normaloff>:/images/SVG/monitor.svg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QHeaderView::section {
+    background-color: rgb(199, 199, 199);
+    color: black;
+    padding-left: 4px;
+    border: 1px solid #6c6c6c;
+}
+
+QHeaderView::section:checked
+{
+    background-color: ;
+}
+
+
+
+
+QTableView {
+    selection-background-color: ;
+}
+
+QTableView QTableCornerButton::section {
+    background: ;
+    border: 2px outset rgb(255, 255, 255);
+}
+
+QTableView::indicator:unchecked {
+    background-color: #d7d6d5
+}
+
+QToolBar {
+    background: rgb(143, 143, 143);
+    spacing: 4px; /* spacing between items in the tool bar */
+}
+
+QToolBox::tab {
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
+                                stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
+    border-radius: 4px;
+    color: lightgray;
+}
+
+QToolBox::tab:selected { /* italicize selected tabs */
+    font: italic;
+    color: white;
+}
+
+QPushButton {
+    border: 2px solid #8f8f91;
+    border-radius: 4px;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #f6f7fa, stop: 1 #dadbde);
+    min-width: 80px;
+}
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #dadbde, stop: 1 #f6f7fa);
+}
+
+QPushButton:flat {
+    border: none; /* no border for a flat push button */
+}
+
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>611</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Semilight</family>
+     </font>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="doneBtn">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>400</y>
+      <width>84</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Source Code Pro</family>
+      <pointsize>10</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>Done</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addRow">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>400</y>
+      <width>84</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tw Cen MT Condensed Extra Bold</family>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>Add</string>
+    </property>
+    <property name="icon">
+     <iconset resource="resource.qrc">
+      <normaloff>:/images/SVG/plus.svg</normaloff>:/images/SVG/plus.svg</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="deleteRow">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>400</y>
+      <width>84</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Tw Cen MT Condensed Extra Bold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+    <property name="icon">
+     <iconset resource="resource.qrc">
+      <normaloff>:/images/SVG/minus.svg</normaloff>:/images/SVG/minus.svg</iconset>
+    </property>
+   </widget>
+   <widget class="QLabel" name="tableLabel">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>400</y>
+      <width>151</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Rockwell</family>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>BottomToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionBookings"/>
+   <addaction name="actionEmployees"/>
+   <addaction name="actionAirports"/>
+   <addaction name="separator"/>
+   <addaction name="actionSearcj"/>
+   <addaction name="separator"/>
+   <addaction name="actionEdit"/>
+   <addaction name="actionRefresh"/>
+  </widget>
+  <action name="actionBookings">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/wallet.svg</normaloff>:/images/SVG/wallet.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Bookings</string>
+   </property>
+  </action>
+  <action name="actionEmployees">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/user-group.svg</normaloff>:/images/SVG/user-group.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Employees</string>
+   </property>
+  </action>
+  <action name="actionAirports">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/checklist.svg</normaloff>:/images/SVG/checklist.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Airports</string>
+   </property>
+  </action>
+  <action name="actionSearcj">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/search.svg</normaloff>:/images/SVG/search.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Search</string>
+   </property>
+  </action>
+  <action name="actionEdit">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/document-edit.svg</normaloff>:/images/SVG/document-edit.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Edit</string>
+   </property>
+  </action>
+  <action name="actionRefresh">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/images/SVG/clockwise.svg</normaloff>:/images/SVG/clockwise.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Refresh</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
