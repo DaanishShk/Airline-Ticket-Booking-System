@@ -3,7 +3,7 @@
 ## INTRODUCTION 
 The aim of the project is to provide an airline ticket reservation company with a booking and management software for their operations. The flight details and information will be provided by connecting to an API service (SkyScanner) and all the booking data will be stored in a MySQL database stored locally for future references or editing. The program is written in C++ and the GUI was built with the help of libraries provided by the Qt framework.
 
-![Screenshot](../master/Readme_images/HomePage.png)
+<img src="https://github.com/DaanishShk/Airline-Ticket-Booking-System/blob/main/Readme_images/HomePage.png" width="960" height="600">
 
 ## INSTRUCTIONS
 
